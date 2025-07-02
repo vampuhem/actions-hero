@@ -1,0 +1,16 @@
+name: create a comment on new issues
+on:
+  issues:  # run workflow when we have an issues
+    types: [opened]
+
+jobs:
+  runs-on: ubuntu-latest
+  steps: #community actionto create a commnet on paticular issue
+  - name: "dump github content"
+    run: echo '${{ toJSON(github.event)}}' | jq
+    shell: bash
+  
+  
+    
+  
+  
