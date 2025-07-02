@@ -8,10 +8,21 @@ jobs:
     runs-on: ubuntu-latest
     steps: #community actionto create a commnet on paticular issue
     - name: "dump github content"
-      run: echo '${{ toJSON(github.event)}}' | jq
+      run: echo '${{ toJSON(github.event) }}' | jq
       shell: bash
-#
-  
+#using comment add a thing to paticular issue
+    - name: Create comment
+      uses: peter-evans/create-or-update-comment@v4
+      with:
+        issue-number: 1
+        body: |
+          This is a multi-line test comment
+           - With GitHub **Markdown** :sparkles:
+           - Created by [create-or-update-comment][1]
+
+           [1]: https://github.com/peter-evans/create-or-update-comment
+          reactions: '+1'
+
     
   
   
