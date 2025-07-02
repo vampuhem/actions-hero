@@ -4,11 +4,12 @@ on:
     types: [opened]
 
 jobs:
-  runs-on: ubuntu-latest
-  steps: #community actionto create a commnet on paticular issue
-  - name: "dump github content"
-    run: echo '${{ toJSON(github.event)}}' | jq
-    shell: bash
+  comment- with-actions:
+    runs-on: ubuntu-latest
+    steps: #community actionto create a commnet on paticular issue
+    - name: "dump github content"
+      run: echo '${{ toJSON(github.event)}}' | jq
+      shell: bash
   
   
     
