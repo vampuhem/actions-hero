@@ -4,7 +4,7 @@ on:
     types: [opened]
 
 jobs:
-  comment- with-actions:
+  comment-with-actions:
     runs-on: ubuntu-latest
     steps: #community actionto create a commnet on paticular issue
     - name: "dump github content"
