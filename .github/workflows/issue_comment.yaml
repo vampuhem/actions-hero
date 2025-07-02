@@ -32,16 +32,14 @@ jobs:
       - name: create a comment with API
         run: |
           gh api -X POST \
-          http://api.github.com/repo/${ORGANIZAIION}/{REPOSITORY}/issues/${ISSUES_NUMBER}/comments \
-          -f body='
-          comment from API call but not for actions
-          '
+            https://api.github.com/repos/${ORGANIZATION}/${REPOSITORY}/issues/${ISSUE_NUMBER}/comments \
+            -f body='
+            comment from API call but not for actions
+            '
         env:
-          GITHUB_ACTION: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           ORGANIZATION: ${{ github.event.organization.login }}
           REPOSITORY: ${{ github.event.repository.name }}
           ISSUE_NUMBER: ${{ github.event.issue.number }}
-          
-
       
   
